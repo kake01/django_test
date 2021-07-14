@@ -1,27 +1,41 @@
 {% extends "base/index.html" %}
 {% load static %}
-
 {% block cssJs %}
 　<link rel="stylesheet" type="text/css" href="{% static 'chat/css/index.css' %}">
 {% endblock %}
 
+
 {% block title %}Chat{% endblock %}
- 
 {% block content %}
+<main>
   <p>Chatコンテンツ</p>
   <!--ここに会話logが残ってくる-->
-<div class="ChatLog">
+  <div class="ChatLog">
     {% for item in data %}
     <div class="Log">
       <div class="SendMessage">
-          <!-- 自分が送るメッセージ  -->
-          <h3 class="float-right">{{ item.content }}</h3>
+        <!-- 自分が送るメッセージ  -->
+        <h3 class="float-right">{{ item.content }}</h3>
       </div>
       <div class="ReplyMessage">
-        <!-- Botが返すメッセージ -->
+        <!-- Botが返すメッセージ --> 
         <h3>{{ item.respond }}</h3>
       </div>
     </div>
     {% endfor %}
-</div>
+  </div>
+  <!--送信領域に関して-->
+  <div class="fixedBottom">
+    {% comment %} <form action="{% url 'chat_bot_message' %}" method="POST">
+        <div class="row Form">
+            <div class="col-10">
+              {% csrf_token %} {{ form }}
+            </div>
+            <div class="col-2 submit">
+              <button type="submit" value="click"><i class="fas fa-paper-plane fa-2x"></i></button>
+            </div>
+        </div>
+    </form> {% endcomment %}
+  </div>
+</main>
 {% endblock %}

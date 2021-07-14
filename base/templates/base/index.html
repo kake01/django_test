@@ -6,14 +6,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <title>{% block title %}{% endblock %}</title>
-
   <link rel="stylesheet" type="text/css" href="{% static 'base/css/index.css' %}">
   {% block cssJs %}{% endblock %}
 </head>
 
 <body>
-  <main>
     {% block content %}{% endblock %}
-  </main>
 </body>
 </html>

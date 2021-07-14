@@ -1,6 +1,19 @@
-p {
-    background: deeppink;
+main {
+    background: #88a4c6;
 }
+
+
 .Log { 
     background: dodgerblue;
+}
+.fixedBottom {
+    width: 100%;
+    height: 50px;
+    background: white;
+    position: fixed;
+    bottom: 0; 
+}
+
+p {
+    background: deeppink;
 }
