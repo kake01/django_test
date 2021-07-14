@@ -1,11 +1,13 @@
 main {
     background: #88a4c6;
 }
-
-
 .Log { 
     background: dodgerblue;
 }
+
+/* ----------------------
+  入力領域に関して
+---------------------- */
 .fixedBottom {
     width: 100%;
     height: 50px;
@@ -13,7 +15,24 @@ main {
     position: fixed;
     bottom: 0; 
 }
-
-p {
-    background: deeppink;
+form,input {
+    width: 95%;
+    height: 100%;
 }
+button {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+}
+/* ----------------------
+  formのラベル削除
+---------------------- */
+label {
+    display: none
+}
+/* form {
+    height: 100%;
+}
+.Form {
+    height: 100%;
+} */

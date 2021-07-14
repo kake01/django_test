@@ -26,16 +26,10 @@
   </div>
   <!--送信領域に関して-->
   <div class="fixedBottom">
-    {% comment %} <form action="{% url 'chat_bot_message' %}" method="POST">
-        <div class="row Form">
-            <div class="col-10">
-              {% csrf_token %} {{ form }}
-            </div>
-            <div class="col-2 submit">
-              <button type="submit" value="click"><i class="fas fa-paper-plane fa-2x"></i></button>
-            </div>
-        </div>
-    </form> {% endcomment %}
+    <form action="{% url 'chat_bot_message' %}" method="POST">
+      {% csrf_token %} {{ form }}
+      <button type="submit" value="click">送信</button>
+    </form>
   </div>
 </main>
 {% endblock %}
