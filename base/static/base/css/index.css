@@ -1,0 +1,10 @@
+p {
+    font-size: 16px;
+    line-height: 1.2em;
+}
+@media screen and (min-width: 1000px) {
+    img {
+        width: 65px;
+        height: 65px;
+    }
+}
