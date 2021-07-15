@@ -1,5 +1,9 @@
 main {
     background: #88a4c6;
+    /*---下部固定部分の領域空ける---*/
+    position: relative;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
 .Log { 
     background: dodgerblue;
@@ -12,8 +16,9 @@ main {
     width: 100%;
     height: 50px;
     background: white;
-    position: fixed;
-    bottom: 0; 
+    /*---下部に固定---*/
+    position: absolute;
+    bottom: 0;
 }
 form,input {
     width: 95%;
@@ -30,9 +35,3 @@ button {
 label {
     display: none
 }
-/* form {
-    height: 100%;
-}
-.Form {
-    height: 100%;
-} */

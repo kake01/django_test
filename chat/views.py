@@ -24,13 +24,11 @@ class MessageView(TemplateView):
         # ユーザーDB作成したら外部キーに設定(TODO)
         # obj.owner_id = request.user.id
         # 返答は学習モデルを使用して作成(TODO)
-        # obj.respond = self.bot_respond(request.POST['content'])
-        obj.respond = 'self.bot_respond(request.POSTtent])'
+        obj.respond = self.bot_respond(request.POST['content'])
         form = MessageForm(request.POST, instance=obj)
         form.save()
-        # return render(request, 'chat/index.html',self.params)
-        return redirect(to="/")
+        return redirect(to="/chat")
     
     # バックエンドメソッドを読み込み返答を作成(TODO)
-    def bot_respond(msg):
+    def bot_respond(self, msg):
         return '貴方は言いました。「' + msg + '」と。'
