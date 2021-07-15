@@ -8,6 +8,11 @@
 {% block content %}
 <main>
   <p>Chatコンテンツ</p>
+  <audio id="Player" autoplay >
+    {% comment %} <source src="{% static 'chat/wav/test.wav' %}"> {% endcomment %}
+    <source src="{% static 'chat/wav/responsd.wav' %}">
+  </audio>
+
   <!--ここに会話logが残ってくる-->
   <div class="ChatLog">
     {% for item in data %}

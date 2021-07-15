@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .models import Message
 from .forms import  MessageForm
 from django.shortcuts import redirect
+from playsound import playsound
 
 
 class MessageView(TemplateView):
@@ -21,12 +22,13 @@ class MessageView(TemplateView):
     def post(self, request):
         #DBに保存
         obj = Message()
-        # ユーザーDB作成したら外部キーに設定(TODO)
+        # TODO ユーザーDB作成したら外部キーに設定
         # obj.owner_id = request.user.id
-        # 返答は学習モデルを使用して作成(TODO)
+        # TODO 返答は学習モデルを使用して作成
         obj.respond = self.bot_respond(request.POST['content'])
         form = MessageForm(request.POST, instance=obj)
         form.save()
+        # TODO wavファイルの書き換え処理
         return redirect(to="/chat")
     
     # バックエンドメソッドを読み込み返答を作成(TODO)
