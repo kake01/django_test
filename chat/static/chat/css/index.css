@@ -17,7 +17,7 @@ main {
     height: 50px;
     background: white;
     /*---下部に固定---*/
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 form,input {

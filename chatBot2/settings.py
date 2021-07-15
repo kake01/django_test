@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'chat',
+    'todo',
 ]
 
 MIDDLEWARE = [
