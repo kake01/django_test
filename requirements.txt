@@ -1,0 +1,14 @@
+asgiref @ file:///tmp/build/80754af9/asgiref_1625037499685/work
+certifi==2021.5.30
+dj-database-url==0.5.0
+Django @ file:///tmp/build/80754af9/django_1622711766781/work
+django-heroku==0.3.1
+gunicorn==20.1.0
+playsound==1.2.2
+psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1624965014186/work
+whitenoise==5.2.0
+wincertstore==0.2
+yapf @ file:///tmp/build/80754af9/yapf_1615749224965/work
