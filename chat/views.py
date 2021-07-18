@@ -4,13 +4,15 @@ from .models import Message
 from .forms import  MessageForm
 from django.shortcuts import redirect
 from playsound import playsound
+from django.contrib.auth.decorators import login_required
 
 
 class MessageView(TemplateView):
     def __init__(self):
         self.params = {
         }
-
+    
+    # @login_required
     def get(self, request):
         data = Message.objects.all()
         self.params = {
@@ -19,6 +21,7 @@ class MessageView(TemplateView):
         }
         return render(request, 'chat/index.html', self.params)
 
+    @login_required
     def post(self, request):
         #DBに保存
         obj = Message()

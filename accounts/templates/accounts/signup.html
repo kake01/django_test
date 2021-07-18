@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+<!-- 静的ファイルの読み込み -->
+{% load static %}
+
+<!-- tittle表示 -->
+{% block title %}PasswordChage{% endblock %}
+
+<!-- bootstrapとJquery以外の静的ファイル読み込み  -->
+{% block css_js %}{% endblock %}
+
+<!--body内のマークアップ -->
+{% block content %}
+<h1>Please Sign Up</h1>
+<div class='container'>
+     <table>
+          <form action="{% url 'accounts_index' %}" method="post">
+               <label for="inputUsername">Username</label>
+               <input type="text" name='username'>
+               <label for="inputPassword">Password</label>
+               <input type="password" placeholder='password' required autofocus name='password'>
+               <label for="inputMail">Mail</label>
+               <input type="text" placeholder='mail' required autofocus name='mail'> {% csrf_token %}
+               <tr>
+                    <td></td>
+                    <td><input type="submit" value="click" /></td>
+               </tr>
+          </form>
+     </table>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base/index.html" %}
+<!-- 静的ファイルの読み込み -->
+{% load static %}
+
+<!-- tittle表示 -->
+{% block title %}LogIn{% endblock %}
+
+<!-- bootstrapとJquery以外の静的ファイル読み込み  -->
+{% block cssJs %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/login.css' %}">{% endblock %}
+
+<!--body内のマークアップ -->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>健康促進アプリ</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="post">
+        <form method="post">
+          {% csrf_token %}
+          <!-- フォームのテーブル表示 -->
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">ログイン</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="passwordReset">
+    <a href="{% url 'password_reset' %}"><i class="fas fa-hammer fa-2x float-left"></i></a>
+  </div>
+  {% comment %} <div class="createAccount">
+    <a href="#"><i class="far fa-plus-square fa-2x float-right"></i></a>
+  </div> {% endcomment %}
+</div>
+{% endblock %}

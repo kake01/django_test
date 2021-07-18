@@ -1,0 +1,74 @@
+/*--------------通常スマホ-----------------*/
+
+body {
+    background: #ecedef;
+    text-align: center;
+}
+
+h1 {
+    color: #00b900;
+    padding: 20%;
+    font-size: x-large;
+}
+
+.btn {
+    background-color: #00b900;
+    color: white;
+    margin: 20%;
+}
+
+.post {
+    padding-top: 10%;
+}
+
+form>p {
+    margin: 5%;
+}
+
+.passwordReset {
+    margin-left: 20%;
+}
+
+/*----------------スマホ横画面--------------------*/
+
+@media (orientation: landscape)and (max-width: 1000px) {
+    h1 {
+        padding: 7%;
+    }
+    form>p {
+        margin: 10px;
+    }
+
+    .btn {
+        margin: 3%;
+    }
+    .post {
+        padding-top: 5%;
+    }
+    .passwordReset {
+        margin-left: none;
+        position: absolute;
+        top: 7%;
+        right: 7%;
+    }
+}
+
+/*-----------------iPad横用-----------------*/
+
+@media (orientation: landscape) and (min-width: 1000px) {
+    h1 {
+        padding: 15%;
+    }
+    form>p {
+        margin: 20px;
+    }
+    .btn {
+        margin: 10%;
+    }
+    .passwordReset {
+        margin-left: none;
+        position: absolute;
+        top: 7%;
+        right: 7%;
+    }
+}
