@@ -4,6 +4,9 @@ body {
 p { 
     margin: unset;
 }
+h1 {
+    margin: unset;
+}
 @media screen and (min-width: 1000px) {
     img {
         width: 65px;

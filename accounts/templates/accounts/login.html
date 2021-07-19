@@ -10,14 +10,12 @@
 
 <!--body内のマークアップ -->
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-12">
+<main>
+  <div class="container">
+    <div class="row">
       <h1>健康促進アプリ</h1>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
+    <div class="row">
       <div class="post">
         <form method="post">
           {% csrf_token %}
@@ -27,13 +25,13 @@
         </form>
       </div>
     </div>
-  </div>
 
-  <div class="passwordReset">
-    <a href="{% url 'password_reset' %}"><i class="fas fa-hammer fa-2x float-left"></i></a>
+    <div class="passwordReset">
+      <a href="{% url 'password_reset' %}"><i class="fas fa-hammer fa-2x float-left"></i></a>
+    </div>
+    {% comment %} <div class="createAccount">
+      <a href="#"><i class="far fa-plus-square fa-2x float-right"></i></a>
+    </div> {% endcomment %}
   </div>
-  {% comment %} <div class="createAccount">
-    <a href="#"><i class="far fa-plus-square fa-2x float-right"></i></a>
-  </div> {% endcomment %}
-</div>
+</main>
 {% endblock %}
