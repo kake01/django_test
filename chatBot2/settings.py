@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'chat',
     'todo',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
