@@ -14,7 +14,7 @@ class HomeView(TemplateView):
     def get(self, request):
         self.params = {
             'chat': 'chat_bot_message',
-            # 'chat': 'chat_bot_message',
+            'todo': 'todo',
         }
         return render(request, 'base/home.html', self.params)
 
