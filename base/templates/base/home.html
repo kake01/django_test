@@ -1,0 +1,17 @@
+{% extends "base/index.html" %}
+
+{% load static %}
+{% block cssJs %}
+　<link rel="stylesheet" type="text/css" href="{% static 'base/css/home.css' %}">
+{% endblock %}
+{% block title %}Home{% endblock %}
+
+
+
+{% block content %}
+<main>
+  <h1>Home画面</h1>
+  <a href=" {% url chat %}">chatへ</a>
+  {% comment %} <a href=" {% url goto %}">{{goto}}</a> {% endcomment %}
+</main>
+{% endblock %}
