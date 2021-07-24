@@ -1,49 +1,52 @@
-/*--------------通常スマホ-----------------*/
-
-body {
+/*--------------通常PC-----------------*/
+main {
     background: #ecedef;
     text-align: center;
 }
-
-h1 {
-    color: #00b900;
-    padding: 15%;
-    font-size: x-large;
+/* ----------タイトル表示---------------------- */
+.tittle-section-parent {
+ position: relative;
+ height: 35%;
 }
-
+.tittle-section-item {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+.tittle-section-item > h1 { 
+    margin: unset;
+}
+/* ----------フォーム入力---------------------- */
+.post-section-parent {
+    height: 65%;
+    position: relative;
+}
+.post-section-item {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 .btn {
     background-color: #00b900;
     color: white;
-    margin: 10%;
+    margin-top: 10%;
 }
-
-.post {
-    padding-top: 10%;
+.password-reset, .create-account {
+    position: absolute;
+    bottom: 25%;
 }
-
-form>p {
-    margin: 5%;
+.password-reset {
+    right: 30%;
 }
-
-.passwordReset {
-    margin-left: 20%;
+.create-account {
+    left: 30%;    
 }
-
 /*----------------スマホ横画面--------------------*/
-
-@media (orientation: landscape)and (max-width: 1000px) {
+@media screen and (max-width: 767px) { 
     h1 {
-        padding: 7%;
-    }
-    form>p {
-        margin: 10px;
-    }
-
-    .btn {
-        margin: 3%;
-    }
-    .post {
-        padding-top: 5%;
+        font-size: 20px;
     }
     .passwordReset {
         margin-left: none;
@@ -51,24 +54,10 @@ form>p {
         top: 7%;
         right: 7%;
     }
-}
-
-/*-----------------iPad横用-----------------*/
-
-@media (orientation: landscape) and (min-width: 1000px) {
-    h1 {
-        padding: 15%;
-    }
-    form>p {
-        margin: 20px;
+    .post-section-item {
+        top: 20%;
     }
     .btn {
-        margin: 10%;
-    }
-    .passwordReset {
-        margin-left: none;
-        position: absolute;
-        top: 7%;
-        right: 7%;
+        margin-top: 15%;
     }
 }

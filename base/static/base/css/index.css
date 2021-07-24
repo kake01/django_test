@@ -1,15 +1,23 @@
+html {
+    height: 100%;
+}
 body {
     margin: unset;
+    height: 100%;
 }
-p { 
+p {
     margin: unset;
 }
-h1 {
-    margin: unset;
+main {
+    height: 100%;
 }
-@media screen and (min-width: 1000px) {
+/* h1 {
+    margin: unset;
+} */
+
+/* @media screen and (min-width: 1000px) {
     img {
         width: 65px;
         height: 65px;
     }
-}
+} */
