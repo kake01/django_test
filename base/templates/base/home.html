@@ -1,17 +1,23 @@
 {% extends "base/index.html" %}
-
 {% load static %}
-{% block cssJs %}
-　<link rel="stylesheet" type="text/css" href="{% static 'base/css/home.css' %}">
-{% endblock %}
 {% block title %}Home{% endblock %}
-
-
-
+{% block cssJs %}<link rel="stylesheet" type="text/css" href="{% static 'base/css/home.css' %}">{% endblock %}
 {% block content %}
-<main>
-  <h1>Home画面</h1>
-  <a href=" {% url chat %}">chatへ</a>
-  <a href=" {% url todo %}">todoへ</a>
-</main>
+  <div class="back-section">
+    <!-- リンクリスト -->
+    <div class="link-section">
+      <!-- todoリンク -->
+      <div class="todo-img-section">
+        <a href=" {% url todo %}">
+          <img src="../../static/base/img/todo.jpg" alt="todoへ">
+        </a>
+      </div>
+      <!-- chatリンク -->
+      <div class="chat-img-section">
+        <a href=" {% url chat %}">
+          <img src="../../static/base/img/chat.png" alt="chatへ">
+        </a>
+      </div>
+    </div>    
+  </div>
 {% endblock %}

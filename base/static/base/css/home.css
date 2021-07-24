@@ -1,3 +1,30 @@
-h1 {
-    background: deeppink;
+/*--------------通常PC-----------------*/
+.back-section {
+    background-image: url("../img/home.jpg");
+    height: 100%;
+    background-size:  cover; 
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+.link-section {
+    padding-top: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.todo-img-section, .chat-img-section {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+}
+.todo-img-section img, .chat-img-section img {
+    width: 100%;
+    height: 100%;    
+}
+/*----------------スマホ横画面--------------------*/
+@media screen and (max-width: 767px) {
+    .todo-img-section, .chat-img-section {
+        width: 150px;
+        height: 150px;
+    }
 }
