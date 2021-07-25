@@ -18,7 +18,7 @@ class MessageView(TemplateView):
             'data': data,
             'form' : MessageForm(),
         }
-        return render(request, 'chat/index.html', self.params)
+        return render(request, 'chat/chat.html', self.params)
 
     @login_required
     def post(self, request):

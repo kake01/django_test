@@ -1,15 +1,10 @@
 {% extends "base/index.html" %}
 {% load static %}
-{% block cssJs %}
-　<link rel="stylesheet" type="text/css" href="{% static 'chat/css/index.css' %}">
-{% endblock %}
+{% block cssJs %}<link rel="stylesheet" type="text/css" href="{% static 'chat/css/chat.css' %}">{% endblock %}
 {% block title %}Chat{% endblock %}
 
 {% block content %}
-<main>
-  <p>Chatコンテンツ</p>
   <audio id="Player" autoplay >
-    {% comment %} <source src="{% static 'chat/wav/test.wav' %}"> {% endcomment %}
     <source src="{% static 'chat/wav/responsd.wav' %}">
   </audio>
 
@@ -35,5 +30,4 @@
       <button type="submit" value="click">送信</button>
     </form>
   </div>
-</main>
 {% endblock %}

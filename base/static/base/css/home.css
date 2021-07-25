@@ -19,7 +19,8 @@
 }
 .todo-img-section img, .chat-img-section img {
     width: 100%;
-    height: 100%;    
+    height: 100%;
+    box-shadow: 0 10px 25px 0 rgba(60, 194, 235, 0.5); 
 }
 /*----------------スマホ横画面--------------------*/
 @media screen and (max-width: 767px) {
