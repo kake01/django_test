@@ -1,3 +1,6 @@
+body {
+    height: unset;
+}
 main {
     background: #88a4c6;
     /*---下部固定部分の領域空ける---*/
@@ -5,10 +8,36 @@ main {
     padding-bottom: 50px;
     box-sizing: border-box;
 }
-.Log { 
-    background: dodgerblue;
+.SendMessage {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
-
+.SendMessageDate p {
+    font-size: 10px;
+}
+.SendMessageText {
+    margin: 5px 0 0 5px;
+    border-radius: 20px;
+    background: green;
+    max-width: 70%;
+    padding: 5px 10px 0 10px;
+}
+.ReplyMessage {
+    display: flex;
+}
+.ReplyMessageImg img{
+    width: 45px;
+    height: 45x;
+    border-radius: 50%;
+}
+.ReplyMessageText {
+    margin: 5px 0 0 5px;
+    border-radius: 20px;
+    background: white;
+    max-width: 70%;
+    padding: 5px 10px 0 10px;
+}
 /* ----------------------
   入力領域に関して
 ---------------------- */
@@ -24,7 +53,7 @@ form,input {
     width: 95%;
     height: 100%;
 }
-button {
+.fixedBottom button {
     position: absolute;
     width: 10%;
     height: 100%;

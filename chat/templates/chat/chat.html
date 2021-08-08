@@ -2,23 +2,31 @@
 {% load static %}
 {% block cssJs %}<link rel="stylesheet" type="text/css" href="{% static 'chat/css/chat.css' %}">{% endblock %}
 {% block title %}Chat{% endblock %}
-
 {% block content %}
-  <audio id="Player" autoplay >
+  <audio id="Player" autoplay>
     <source src="{% static 'chat/wav/responsd.wav' %}">
   </audio>
-
   <!--ここに会話logが残ってくる-->
   <div class="ChatLog">
     {% for item in data %}
     <div class="Log">
+      <!-- 自分が送るメッセージ  -->
       <div class="SendMessage">
-        <!-- 自分が送るメッセージ  -->
-        <h3 class="float-right">{{ item.content }}</h3>
+        <div class="SendMessageDate">
+          <p>{{ item.pub_date.time }}</p>
+        </div>
+        <div class="SendMessageText">
+          <p>{{ item.content }}</p>
+        </div>
       </div>
+      <!-- Botが返すメッセージ -->
       <div class="ReplyMessage">
-        <!-- Botが返すメッセージ --> 
-        <h3>{{ item.respond }}</h3>
+        <div class="ReplyMessageImg">
+          <img src="{% static 'chat/img/bot.jpg' %}" alt="チャット画像">
+        </div>
+        <div class="ReplyMessageText">
+          <p>{{ item.respond }}</p>
+        </div>
       </div>
     </div>
     {% endfor %}
