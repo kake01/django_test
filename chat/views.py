@@ -3,10 +3,10 @@ from django.views.generic import TemplateView
 from .models import Message
 from .forms import  MessageForm
 from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class MessageView(TemplateView):
+class MessageView(LoginRequiredMixin, TemplateView):
     def __init__(self):
         self.params = {
         }
@@ -20,16 +20,18 @@ class MessageView(TemplateView):
         }
         return render(request, 'chat/chat.html', self.params)
 
-    @login_required
+    # @login_required
     def post(self, request):
         #DBに保存
         obj = Message()
         # TODO ユーザーDB作成したら外部キーに設定
-        # obj.owner_id = request.user.id
-        # TODO 返答は学習モデルを使用して作成
+        obj.owner_id = request.user.id
         obj.respond = self.bot_respond(request.POST['content'])
         form = MessageForm(request.POST, instance=obj)
         form.save()
+
+        data = Message.objects.filter(owner_id=request.user.id)
+
         # TODO wavファイルの書き換え処理
         return redirect(to="/chat")
     
