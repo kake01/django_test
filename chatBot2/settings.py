@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'accounts',
     'chat',
     'todo',
+    'rest_framework', #追記
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
