@@ -1,12 +1,14 @@
-body {
-    height: unset;
-}
 main {
     background: #88a4c6;
     /*---下部固定部分の領域空ける---*/
     position: relative;
     padding-bottom: 50px;
     box-sizing: border-box;
+    height: auto;
+    min-height: 100%;
+}
+.ChatLog {
+    padding: 0 20px;
 }
 .SendMessage {
     display: flex;

@@ -2,7 +2,6 @@ from pathlib import Path
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-khxjqmqw6($rtn2h2-#l#88vf&&)1_esvw4*59=6ds-)h+i^9n'
 
 
@@ -32,7 +31,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware', #追加
 ]
 
 ROOT_URLCONF = 'chatBot2.urls'
@@ -40,7 +38,6 @@ ROOT_URLCONF = 'chatBot2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,18 +76,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'ja-jp'
-
 TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/'

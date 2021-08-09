@@ -8,7 +8,6 @@ class Message(models.Model):
     respond = models.CharField(max_length=300)
     pub_date = models.DateTimeField(auto_now_add=True)
     
-    
     def __str__(self):
         return 'owner='+ str(self.owner) + '(Message:id=' + str(self.id) + ' , '  + 'content=' + self.content + 'respond=' + self.respond + str(self.pub_date) + ' ) '
         
