@@ -11,7 +11,6 @@ class MessageView(LoginRequiredMixin, TemplateView):
         self.params = {
         }
     
-    # @login_required
     def get(self, request):
         data = Message.objects.all()
         self.params = {
@@ -20,7 +19,6 @@ class MessageView(LoginRequiredMixin, TemplateView):
         }
         return render(request, 'chat/chat.html', self.params)
 
-    # @login_required
     def post(self, request):
         #DBに保存
         obj = Message()

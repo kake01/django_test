@@ -6,13 +6,13 @@ class Todo(models.Model):
     title = models.CharField(max_length=200)
     contents = models.CharField(max_length=300)
     progress = models.PositiveSmallIntegerField()
-    pub_data = models.DateTimeField(auto_now_add=True)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return 'owner='+ str(self.owner) + \
         '(title=' + str(self.title) + \
-        ' , '  + 'contents=' + self.contents + 'progress=' + self.progress + \
+        ' , '  + 'contents=' + self.contents + 'progress=' + str(self.progress) + \
             ' pub_date: ' + str(self.pub_date) + ' ) '
 
     class Meta:
-        ordering = ('pub_data',)
+        ordering = ('pub_date',)
