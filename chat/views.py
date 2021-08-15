@@ -4,6 +4,7 @@ from .models import Message
 from .forms import  MessageForm
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from gtts import gTTS
 
 
 class MessageView(LoginRequiredMixin, TemplateView):
@@ -24,13 +25,15 @@ class MessageView(LoginRequiredMixin, TemplateView):
         obj = Message()
         # TODO ユーザーDB作成したら外部キーに設定
         obj.owner_id = request.user.id
-        obj.respond = self.bot_respond(request.POST['content'])
+        respond_text = self.bot_respond(request.POST['content'])
+        obj.respond = respond_text
         form = MessageForm(request.POST, instance=obj)
         form.save()
-
         data = Message.objects.filter(owner_id=request.user.id)
 
-        # TODO wavファイルの書き換え処理
+        tts = gTTS(text=respond_text, lang='ja')
+        tts.save('./chat/static/chat/wav/responsd.wav')
+
         return redirect(to="/chat")
     
     # バックエンドメソッドを読み込み返答を作成(TODO)
