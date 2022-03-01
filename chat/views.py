@@ -27,6 +27,7 @@ class MessageView(LoginRequiredMixin, TemplateView):
         obj.owner_id = request.user.id
         respond_text = self.bot_respond(request.POST['content'])
         obj.respond = respond_text
+        print(respond_text)
         form = MessageForm(request.POST, instance=obj)
         form.save()
         data = Message.objects.filter(owner_id=request.user.id)
