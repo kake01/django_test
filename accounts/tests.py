@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Post
 
+#  モデル系のテスト
 class PostModelTests(TestCase):
     def test_is_empty(self):
       """初期状態だけど1つはデータが存在しているかどうかをチェック (error が期待される)"""  

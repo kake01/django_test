@@ -3,3 +3,14 @@ python-3.9.5
 
 参考
 https://zenn.dev/tmasuyama1114/articles/django-how-to-unit-test
+
+
+テスト項目(サンプル)
+    # モデル
+        テストはaccountsで実施
+    # url
+        テストはchatで実施
+    # view
+        テストはtodoで実施
+
+    

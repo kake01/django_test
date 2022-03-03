@@ -13,6 +13,6 @@ class TodoView(TemplateView):
         }
         return render(request, 'todo/index.html', self.params)
 
-    # def post(self, request):
-    #    return render(request, 'todo/index.html', self.params)
+    def post(self, request):
+       return render(request, 'todo/index.html', self.params)
     
